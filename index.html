@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Welcome to Sweet Pee Hotel - Experience luxury and comfort in the heart of the city. Book your perfect stay with us today.">
+    <title>Sweet Pee Hotel - Luxury Accommodation</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Add Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    
+  
+</head>
+<body>
+    <!-- Loading Spinner -->
+    <div id="loader" class="loader-container">
+        <div class="spinner"></div>
+    </div>
+<!-- WhatsApp Floating Icon -->
+<a href="https://wa.me/233234567" class="whatsapp-float" target="_blank">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+</a>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="assets/images/logo.webp" alt="Sweet Pee Hotel Logo" height="50">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="rooms.html">Rooms & Suites</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="facilities.html">Facilities</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="gallery.html">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link book-now-btn" href="booking.html">Book Now</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-section">
+        <div class="hero-content">
+            <h1 data-aos="fade-up">Welcome to Sweet Pee Hotel</h1>
+            <p data-aos="fade-up" data-aos-delay="200">Experience luxury redefined</p>
+            <a href="booking.html" class="cta-button" data-aos="fade-up" data-aos-delay="400">Book Your Stay</a>
+        </div>
+    </header>
+
+    <!-- Hotel Highlights -->
+    <section class="highlights-section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Hotel Highlights</h2>
+            <div class="row">
+                <div class="col-md-4" data-aos="fade-up">
+                    <div class="highlight-card">
+                        <i class="fas fa-bed"></i>
+                        <h3>Luxury Rooms</h3>
+                        <p>Experience comfort in our elegantly designed rooms</p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="highlight-card">
+                        <i class="fas fa-utensils"></i>
+                        <h3>Fine Dining</h3>
+                        <p>Savor exquisite cuisine at our restaurants</p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="400">
+                    <div class="highlight-card">
+                        <i class="fas fa-spa"></i>
+                        <h3>Wellness Spa</h3>
+                        <p>Rejuvenate your senses at our luxury spa</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Room Slider Section -->
+    <section class="room-slider-section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Our Rooms & Suites</h2>
+            <div class="swiper room-slider" data-aos="fade-up">
+                <div class="swiper-wrapper">
+                    <!-- Deluxe Room -->
+                    <div class="swiper-slide">
+                        <div class="room-slide">
+                            <div class="room-image">
+                                <img src="assets/images/rooms/suite-1.jpg" alt="Deluxe Room">
+                            </div>
+                            <div class="room-content">
+                                <h3>Deluxe Room</h3>
+                                <p>Experience comfort and elegance in our spacious deluxe rooms.</p>
+                                <ul class="room-features">
+                                    <li><i class="fas fa-bed"></i> King Size Bed</li>
+                                    <li><i class="fas fa-wifi"></i> Free Wi-Fi</li>
+                                    <li><i class="fas fa-tv"></i> Smart TV</li>
+                                    <li><i class="fas fa-bath"></i> Luxury Bathroom</li>
+                                </ul>
+                                <div class="room-price">From GHS 200/night</div>
+                                <a href="booking.html" class="btn book-now-btn " >Book Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Suite -->
+                    <div class="swiper-slide">
+                        <div class="room-slide">
+                            <div class="room-image">
+                                <img src="assets/images/rooms/suite-2.jpg" alt="Executive Suite">
+                            </div>
+                            <div class="room-content">
+                                <h3>Executive Suite</h3>
+                                <p>Indulge in luxury with our spacious executive suites.</p>
+                                <ul class="room-features">
+                                    <li><i class="fas fa-bed"></i> King Size Bed</li>
+                                    <li><i class="fas fa-couch"></i> Living Area</li>
+                                    <li><i class="fas fa-swimming-pool"></i> Pool Access</li>
+                                    <li><i class="fas fa-concierge-bell"></i> Butler Service</li>
+                                </ul>
+                                <div class="room-price">From GHS 350/night</div>
+                                <a href="booking.html" class="btn book-now-btn">Book Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Family Room -->
+                    <div class="swiper-slide">
+                        <div class="room-slide">
+                            <div class="room-image">
+                                <img src="assets/images/rooms/suite-3.jpg" alt="Family Room">
+                            </div>
+                            <div class="room-content">
+                                <h3>Family Room</h3>
+                                <p>Perfect for family stays with extra space and amenities.</p>
+                                <ul class="room-features">
+                                    <li><i class="fas fa-bed"></i> 2 Queen Beds</li>
+                                    <li><i class="fas fa-door-open"></i> Connecting Rooms</li>
+                                    <li><i class="fas fa-baby"></i> Child-Friendly</li>
+                                    <li><i class="fas fa-gamepad"></i> Game Console</li>
+                                </ul>
+                                <div class="room-price">From GHS 280/night</div>
+                                <a href="booking.html" class="btn book-now-btn">Book Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Amenities Slider Section -->
+    <section class="amenities-slider-section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Our Amenities</h2>
+            <div class="swiper amenities-slider" data-aos="fade-up">
+                <div class="swiper-wrapper">
+                    <!-- Spa -->
+                    <div class="swiper-slide">
+                        <div class="amenity-slide">
+                            <div class="amenity-image">
+                                <img src="assets/images/amenities/spa.jpg" alt="Luxury Spa">
+                            </div>
+                            <div class="amenity-content">
+                                <h3>Luxury Spa</h3>
+                                <p>Rejuvenate your body and mind with our premium spa treatments.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Pool -->
+                    <div class="swiper-slide">
+                        <div class="amenity-slide">
+                            <div class="amenity-image">
+                                <img src="assets/images/amenities/pool.jpg" alt="Swimming Pool">
+                            </div>
+                            <div class="amenity-content">
+                                <h3>Infinity Pool</h3>
+                                <p>Take a refreshing dip in our stunning infinity pool.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Gym -->
+                    <div class="swiper-slide">
+                        <div class="amenity-slide">
+                            <div class="amenity-image">
+                                <img src="assets/images/amenities/gym.jpg" alt="Fitness Center">
+                            </div>
+                            <div class="amenity-content">
+                                <h3>Fitness Center</h3>
+                                <p>Stay fit with our state-of-the-art gym equipment.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Restaurant -->
+                    <div class="swiper-slide">
+                        <div class="amenity-slide">
+                            <div class="amenity-image">
+                                <img src="assets/images/amenities/restaurant.jpg" alt="Fine Dining">
+                            </div>
+                            <div class="amenity-content">
+                                <h3>Fine Dining</h3>
+                                <p>Savor exquisite cuisine at our signature restaurant.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials-section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Guest Testimonials</h2>
+            <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="testimonial-card">
+                            <p>"An unforgettable experience! The service was impeccable."</p>
+                            <h4>John Smith</h4>
+                            <span>Business Traveler</span>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="testimonial-card">
+                            <p>"The perfect blend of luxury and comfort. Will definitely return!"</p>
+                            <h4>Sarah Johnson</h4>
+                            <span>Leisure Guest</span>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h3>Sweet Pee Hotel</h3>
+                    <p>Luxury and comfort in every detail</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="rooms.html">Rooms & Suites</a></li>
+                        <li><a href="dining.html">Dining</a></li>
+                        <li><a href="facilities.html">Facilities</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Hotel Street, City, Country</p>
+                    <p><i class="fas fa-phone"></i> +1 234 567 890</p>
+                    <p><i class="fas fa-envelope"></i> info@sweetpeehotel.com</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2024 Sweet Pee Hotel. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    
+    <script>
+        // Initialize Swiper sliders
+        const roomSlider = new Swiper('.room-slider', {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            loop: true,
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            breakpoints: {
+                768: {
+                    slidesPerView: 2,
+                },
+                1024: {
+                    slidesPerView: 3,
+                }
+            }
+        });
+
+        const amenitiesSlider = new Swiper('.amenities-slider', {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            loop: true,
+            autoplay: {
+                delay: 4000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            breakpoints: {
+                768: {
+                    slidesPerView: 2,
+                },
+                1024: {
+                    slidesPerView: 4,
+                }
+            }
+        });
+    </script>
+</body>
+</html>
