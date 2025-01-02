@@ -1,821 +1,825 @@
 /* Variables */
 :root {
-    --primary-color: #8B4513; /* Red Brown */
-    --secondary-color: #DAA520; /* Gold Yellow */
-    --text-color: #333333;
-    --light-color: #ffffff;
-    --dark-color: #1a1a1a;
-    --transition: all 0.3s ease;
+  --primary-color: #8b4513; /* Red Brown */
+  --secondary-color: #daa520; /* Gold Yellow */
+  --text-color: #333333;
+  --light-color: #ffffff;
+  --dark-color: #1a1a1a;
+  --transition: all 0.3s ease;
 }
 
 /* Global Styles */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: 'Arial', sans-serif;
-    color: var(--text-color);
-    line-height: 1.6;
+  font-family: "Arial", sans-serif;
+  color: var(--text-color);
+  line-height: 1.6;
 }
 
 /* Loader */
 .loader-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: var(--light-color);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--light-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
 }
 
 .spinner {
-    width: 50px;
-    height: 50px;
-    border: 5px solid var(--secondary-color);
-    border-top: 5px solid var(--primary-color);
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
+  width: 50px;
+  height: 50px;
+  border: 5px solid var(--secondary-color);
+  border-top: 5px solid var(--primary-color);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
 }
 
 @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 /* Navigation */
 .navbar {
-    background-color: rgba(0, 0, 0, 0.8);
-    padding: 1rem 0;
-    transition: var(--transition);
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 1rem 0;
+  transition: var(--transition);
 }
 
 .navbar-brand img {
-    transition: var(--transition);
+  transition: var(--transition);
 }
 
 .nav-link {
-    color: var(--light-color) !important;
-    margin: 0 1rem;
-    transition: var(--transition);
+  color: var(--light-color) !important;
+  margin: 0 1rem;
+  transition: var(--transition);
 }
 
 .nav-link:hover {
-    color: var(--secondary-color) !important;
+  color: var(--secondary-color) !important;
 }
 
 .book-now-btn {
-    background-color: var(--secondary-color);
-    padding: 0.5rem 1.5rem !important;
-    border-radius: 25px;
-    transition: var(--transition);
+  background-color: var(--secondary-color);
+  padding: 0.5rem 1.5rem !important;
+  border-radius: 25px;
+  transition: var(--transition);
 }
 
 .book-now-btn:hover {
-    background-color: var(--primary-color);
-    color: var(--light-color) !important;
+  background-color: var(--primary-color);
+  color: var(--light-color) !important;
 }
 
 /* Hero Section */
 .hero-section {
-    height: 100vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-                url('/assets/images/hero-bg2r.JPEG') no-repeat center center;
-    background-size: cover;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: var(--light-color);
+  height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("/assets/images/Restaraunt/0T9A9240.webp") no-repeat center center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--light-color);
 }
 
 .hero-content h1 {
-    font-size: 4rem;
-    margin-bottom: 1rem;
+  font-size: 4rem;
+  margin-bottom: 1rem;
 }
 
 .hero-content p {
-    font-size: 1.5rem;
-    margin-bottom: 2rem;
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
 }
 
 .cta-button {
-    display: inline-block;
-    padding: 1rem 2.5rem;
-    background-color: var(--secondary-color);
-    color: var(--light-color);
-    text-decoration: none;
-    border-radius: 30px;
-    transition: var(--transition);
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  background-color: var(--secondary-color);
+  color: var(--light-color);
+  text-decoration: none;
+  border-radius: 30px;
+  transition: var(--transition);
 }
 
 .cta-button:hover {
-    background-color: var(--primary-color);
-    color: var(--light-color);
+  background-color: var(--primary-color);
+  color: var(--light-color);
 }
 
 /* Sections */
 section {
-    padding: 5rem 0;
+  padding: 5rem 0;
 }
 
 .section-title {
-    text-align: center;
-    color: var(--primary-color);
-    margin-bottom: 3rem;
+  text-align: center;
+  color: var(--primary-color);
+  margin-bottom: 3rem;
 }
 
 /* Highlights Section */
 .highlight-card {
-    text-align: center;
-    padding: 2rem;
-    margin-bottom: 2rem;
-    transition: var(--transition);
+  text-align: center;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  transition: var(--transition);
 }
 
 .highlight-card i {
-    font-size: 3rem;
-    color: var(--secondary-color);
-    margin-bottom: 1rem;
+  font-size: 3rem;
+  color: var(--secondary-color);
+  margin-bottom: 1rem;
 }
 
 .highlight-card:hover {
-    transform: translateY(-10px);
+  transform: translateY(-10px);
 }
 
 /* Testimonials Section */
 .testimonials-section {
-    background-color: #f9f9f9;
+  background-color: #f9f9f9;
 }
 
 .testimonial-card {
-    text-align: center;
-    padding: 2rem;
-    max-width: 800px;
-    margin: 0 auto;
+  text-align: center;
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .testimonial-card p {
-    font-size: 1.2rem;
-    font-style: italic;
-    margin-bottom: 1rem;
+  font-size: 1.2rem;
+  font-style: italic;
+  margin-bottom: 1rem;
 }
 
 /* Page Header */
 .page-header {
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-                url('/assets/images/Sweetpee.jpg') no-repeat center center;
-    background-size: cover;
-    height: 50vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: var(--light-color);
-    margin-top: 76px;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("/assets/images/Sweetpee.jpg") no-repeat center center;
+  background-size: cover;
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--light-color);
+  margin-top: 76px;
 }
 
 .page-header h1 {
-    font-size: 3.5rem;
-    margin-bottom: 1rem;
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
 }
 
 .page-header p {
-    font-size: 1.2rem;
+  font-size: 1.2rem;
 }
 
 /* Rooms Section */
 .rooms-section {
-    padding: 5rem 0;
+  padding: 5rem 0;
 }
 
 .room-card {
-    margin-bottom: 4rem;
-    padding: 2rem;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  margin-bottom: 4rem;
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .room-gallery {
-    position: relative;
-    margin-bottom: 2rem;
+  position: relative;
+  margin-bottom: 2rem;
 }
 
 .room-gallery img {
-    border-radius: 8px;
-    width: 100%;
-    height: auto;
+  border-radius: 8px;
+  width: 100%;
+  height: auto;
 }
 
 .room-gallery-thumbs {
-    display: flex;
-    gap: 10px;
-    margin-top: 10px;
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
 }
 
 .room-gallery-thumbs a {
-    flex: 1;
+  flex: 1;
 }
 
 .room-gallery-thumbs img {
-    width: 100%;
-    height: 80px;
-    object-fit: cover;
-    border-radius: 4px;
-    transition: var(--transition);
+  width: 100%;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 4px;
+  transition: var(--transition);
 }
 
 .room-gallery-thumbs img:hover {
-    opacity: 0.8;
+  opacity: 0.8;
 }
 
 .room-details {
-    padding: 1rem;
+  padding: 1rem;
 }
 
 .room-details h2 {
-    color: var(--primary-color);
-    margin-bottom: 1.5rem;
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
 }
 
 .room-features {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-    margin-bottom: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .room-features span {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 0.9rem;
-    color: #666;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: #666;
 }
 
 .room-features i {
-    color: var(--secondary-color);
+  color: var(--secondary-color);
 }
 
 .room-amenities {
-    margin: 2rem 0;
+  margin: 2rem 0;
 }
 
 .room-amenities h3 {
-    font-size: 1.2rem;
-    color: var(--primary-color);
-    margin-bottom: 1rem;
+  font-size: 1.2rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
 }
 
 .room-amenities ul {
-    list-style: none;
-    padding: 0;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
 }
 
 .room-amenities li {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .room-amenities i {
-    color: var(--secondary-color);
+  color: var(--secondary-color);
 }
 
 .room-price {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: 2rem;
-    padding-top: 1rem;
-    border-top: 1px solid #eee;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid #eee;
 }
 
 .price {
-    font-size: 1.5rem;
-    color: var(--primary-color);
-    font-weight: bold;
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  font-weight: bold;
 }
 
 .btn-book {
-    display: inline-block;
-    padding: 0.8rem 2rem;
-    background-color: var(--secondary-color);
-    color: var(--light-color);
-    text-decoration: none;
-    border-radius: 25px;
-    transition: var(--transition);
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  background-color: var(--secondary-color);
+  color: var(--light-color);
+  text-decoration: none;
+  border-radius: 25px;
+  transition: var(--transition);
 }
 
 .btn-book:hover {
-    background-color: var(--primary-color);
-    color: var(--light-color);
+  background-color: var(--primary-color);
+  color: var(--light-color);
 }
 
 /* Responsive Design for Rooms */
 @media (max-width: 768px) {
-    .page-header {
-        height: 40vh;
-        margin-top: 60px;
-    }
-    
-    .page-header h1 {
-        font-size: 2.5rem;
-    }
-    
-    .room-amenities ul {
-        grid-template-columns: 1fr;
-    }
-    
-    .room-price {
-        flex-direction: column;
-        gap: 1rem;
-        text-align: center;
-    }
+  .page-header {
+    height: 40vh;
+    margin-top: 60px;
+  }
+
+  .page-header h1 {
+    font-size: 2.5rem;
+  }
+
+  .room-amenities ul {
+    grid-template-columns: 1fr;
+  }
+
+  .room-price {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
 }
 
 /* Booking Page Styles */
 .booking-header {
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-                url('/assets/images/booking-bg.webp') no-repeat center center;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("/assets/images/booking-bg.webp") no-repeat center center;
 }
 
 .booking-section {
-    padding: 5rem 0;
-    background-color: #f9f9f9;
+  padding: 5rem 0;
+  background-color: #f9f9f9;
 }
 
 .booking-form {
-    background-color: #fff;
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .form-section {
-    margin-bottom: 2rem;
-    padding-bottom: 2rem;
-    border-bottom: 1px solid #eee;
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #eee;
 }
 
 .form-section:last-child {
-    border-bottom: none;
+  border-bottom: none;
 }
 
 .form-section h3 {
-    color: var(--primary-color);
-    margin-bottom: 1.5rem;
-    font-size: 1.5rem;
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
 }
 
 .booking-form .form-label {
-    color: #555;
-    font-weight: 500;
+  color: #555;
+  font-weight: 500;
 }
 
 .booking-form .form-control,
 .booking-form .form-select {
-    border: 1px solid #ddd;
-    padding: 0.75rem;
-    border-radius: 5px;
+  border: 1px solid #ddd;
+  padding: 0.75rem;
+  border-radius: 5px;
 }
 
 .booking-form .form-control:focus,
 .booking-form .form-select:focus {
-    border-color: var(--secondary-color);
-    box-shadow: 0 0 0 0.2rem rgba(218, 165, 32, 0.25);
+  border-color: var(--secondary-color);
+  box-shadow: 0 0 0 0.2rem rgba(218, 165, 32, 0.25);
 }
 
 .booking-summary {
-    background-color: #fff;
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    position: sticky;
-    top: 100px;
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 100px;
 }
 
 .booking-summary h3 {
-    color: var(--primary-color);
-    margin-bottom: 1.5rem;
-    font-size: 1.5rem;
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
 }
 
 .summary-item {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 1rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 1px dashed #eee;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px dashed #eee;
 }
 
 .summary-total {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 1.5rem;
-    padding-top: 1rem;
-    border-top: 2px solid var(--secondary-color);
-    font-weight: bold;
-    font-size: 1.2rem;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 2px solid var(--secondary-color);
+  font-weight: bold;
+  font-size: 1.2rem;
 }
 
 /* Datepicker Customization */
 .flatpickr-calendar {
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .flatpickr-day.selected {
-    background: var(--secondary-color);
-    border-color: var(--secondary-color);
+  background: var(--secondary-color);
+  border-color: var(--secondary-color);
 }
 
 /* Responsive Design for Booking Page */
 @media (max-width: 768px) {
-    .booking-form,
-    .booking-summary {
-        margin-bottom: 2rem;
-    }
-    
-    .booking-summary {
-        position: static;
-    }
-    
-    .form-section {
-        padding: 1.5rem;
-    }
+  .booking-form,
+  .booking-summary {
+    margin-bottom: 2rem;
+  }
+
+  .booking-summary {
+    position: static;
+  }
+
+  .form-section {
+    padding: 1.5rem;
+  }
 }
 
 /* Facilities Page Styles */
 .facilities-header {
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-                url('/assets/images/booking-bg.webp') no-repeat center center;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("/assets/images/booking-bg.webp") no-repeat center center;
 }
 
 .facilities-section {
-    padding: 5rem 0;
+  padding: 5rem 0;
 }
 
 .facility-card {
-    margin-bottom: 5rem;
-    padding: 2rem;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    transition: var(--transition);
+  margin-bottom: 5rem;
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: var(--transition);
 }
 
 .facility-card:hover {
-    transform: translateY(-5px);
+  transform: translateY(-5px);
 }
 
 .facility-image {
-    position: relative;
-    overflow: hidden;
-    border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
 }
 
 .facility-image img {
-    width: 100%;
-    height: 400px;
-    object-fit: cover;
-    transition: var(--transition);
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  transition: var(--transition);
 }
 
 .facility-image:hover img {
-    transform: scale(1.05);
+  transform: scale(1.05);
 }
 
 .facility-content {
-    padding: 2rem;
+  padding: 2rem;
 }
 
 .facility-icon {
-    font-size: 2.5rem;
-    color: var(--secondary-color);
-    margin-bottom: 1rem;
+  font-size: 2.5rem;
+  color: var(--secondary-color);
+  margin-bottom: 1rem;
 }
 
 .facility-content h2 {
-    color: var(--primary-color);
-    margin-bottom: 1rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
 }
 
 .facility-features {
-    list-style: none;
-    padding: 0;
-    margin: 1.5rem 0;
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0;
 }
 
 .facility-features li {
-    margin-bottom: 0.5rem;
-    display: flex;
-    align-items: center;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
 }
 
 .facility-features i {
-    color: var(--secondary-color);
-    margin-right: 0.5rem;
+  color: var(--secondary-color);
+  margin-right: 0.5rem;
 }
 
 .facility-hours {
-    color: #666;
-    margin-top: 1rem;
+  color: #666;
+  margin-top: 1rem;
 }
 
 .facility-hours i {
-    color: var(--secondary-color);
-    margin-right: 0.5rem;
+  color: var(--secondary-color);
+  margin-right: 0.5rem;
 }
 
 /* Additional Amenities Section */
 .amenities-section {
-    padding: 5rem 0;
-    background-color: #f9f9f9;
+  padding: 5rem 0;
+  background-color: #f9f9f9;
 }
 
 .amenity-card {
-    text-align: center;
-    padding: 2rem;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    margin-bottom: 2rem;
-    transition: var(--transition);
+  text-align: center;
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+  transition: var(--transition);
 }
 
 .amenity-card:hover {
-    transform: translateY(-5px);
+  transform: translateY(-5px);
 }
 
 .amenity-card i {
-    font-size: 2.5rem;
-    color: var(--secondary-color);
-    margin-bottom: 1rem;
+  font-size: 2.5rem;
+  color: var(--secondary-color);
+  margin-bottom: 1rem;
 }
 
 .amenity-card h3 {
-    color: var(--primary-color);
-    margin-bottom: 1rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
 }
 
 .amenity-card p {
-    color: #666;
-    margin-bottom: 0;
+  color: #666;
+  margin-bottom: 0;
 }
 
 /* Responsive Design for Facilities */
 @media (max-width: 768px) {
-    .facility-image img {
-        height: 300px;
-    }
-    
-    .facility-content {
-        padding: 1.5rem;
-    }
-    
-    .facility-card {
-        margin-bottom: 3rem;
-    }
+  .facility-image img {
+    height: 300px;
+  }
+
+  .facility-content {
+    padding: 1.5rem;
+  }
+
+  .facility-card {
+    margin-bottom: 3rem;
+  }
 }
 
 /* Footer */
 .footer {
-    background-color: var(--dark-color);
-    color: var(--light-color);
-    padding: 4rem 0 0;
+  background-color: var(--dark-color);
+  color: var(--light-color);
+  padding: 4rem 0 0;
 }
 
 .footer h3 {
-    color: var(--secondary-color);
-    margin-bottom: 1.5rem;
+  color: var(--secondary-color);
+  margin-bottom: 1.5rem;
 }
 
 .footer ul {
-    list-style: none;
-    padding: 0;
+  list-style: none;
+  padding: 0;
 }
 
 .footer ul li {
-    margin-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 .footer a {
-    color: var(--light-color);
-    text-decoration: none;
-    transition: var(--transition);
+  color: var(--light-color);
+  text-decoration: none;
+  transition: var(--transition);
 }
 
 .footer a:hover {
-    color: var(--secondary-color);
+  color: var(--secondary-color);
 }
 
 .social-links {
-    margin-top: 1.5rem;
+  margin-top: 1.5rem;
 }
 
 .social-links a {
-    display: inline-block;
-    width: 35px;
-    height: 35px;
-    background-color: var(--secondary-color);
-    color: var(--light-color);
-    border-radius: 50%;
-    text-align: center;
-    line-height: 35px;
-    margin-right: 0.5rem;
-    transition: var(--transition);
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  background-color: var(--secondary-color);
+  color: var(--light-color);
+  border-radius: 50%;
+  text-align: center;
+  line-height: 35px;
+  margin-right: 0.5rem;
+  transition: var(--transition);
 }
 
 .social-links a:hover {
-    background-color: var(--primary-color);
-    transform: translateY(-3px);
+  background-color: var(--primary-color);
+  transform: translateY(-3px);
 }
 
 .footer-bottom {
-    background-color: rgba(0, 0, 0, 0.2);
-    padding: 1rem 0;
-    margin-top: 3rem;
-    text-align: center;
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 1rem 0;
+  margin-top: 3rem;
+  text-align: center;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .hero-content h1 {
-        font-size: 2.5rem;
-    }
-    
-    .hero-content p {
-        font-size: 1.2rem;
-    }
-    
-    .navbar {
-        background-color: rgba(0, 0, 0, 0.9);
-    }
-    
-    .navbar-collapse {
-        background-color: rgba(0, 0, 0, 0.9);
-        padding: 1rem;
-    }
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-content p {
+    font-size: 1.2rem;
+  }
+
+  .navbar {
+    background-color: rgba(0, 0, 0, 0.9);
+  }
+
+  .navbar-collapse {
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 1rem;
+  }
 }
 
 /* Animations */
 [data-aos] {
-    opacity: 0;
-    transition-duration: 1s;
-    transition-property: opacity, transform;
+  opacity: 0;
+  transition-duration: 1s;
+  transition-property: opacity, transform;
 }
 
 [data-aos].aos-animate {
-    opacity: 1;
+  opacity: 1;
 }
- /* Room Slider Styles */
- .room-slider-section,
- .amenities-slider-section {
-     padding: 80px 0;
-     background: #f8f9fa;
- }
+/* Room Slider Styles */
+.room-slider-section,
+.amenities-slider-section {
+  padding: 80px 0;
+  background: #f8f9fa;
+}
 
- .swiper {
-     width: 100%;
-     padding: 50px 0;
- }
+.swiper {
+  width: 100%;
+  padding: 50px 0;
+}
 
- .room-slide,
- .amenity-slide {
-     background: #fff;
-     border-radius: 15px;
-     overflow: hidden;
-     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-     transition: transform 0.3s ease;
- }
+.room-slide,
+.amenity-slide {
+  background: #fff;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
 
- .room-slide:hover,
- .amenity-slide:hover {
-     transform: translateY(-10px);
- }
+.room-slide:hover,
+.amenity-slide:hover {
+  transform: translateY(-10px);
+}
 
- .room-image,
- .amenity-image {
-     position: relative;
-     height: 300px;
-     overflow: hidden;
- }
+.room-image,
+.amenity-image {
+  position: relative;
+  height: 300px;
+  overflow: hidden;
+}
 
- .room-image img,
- .amenity-image img {
-     width: 100%;
-     height: 100%;
-     object-fit: cover;
- }
+.room-image img,
+.amenity-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
- .room-content,
- .amenity-content {
-     padding: 20px;
- }
+.room-content,
+.amenity-content {
+  padding: 20px;
+}
 
- .room-content h3,
- .amenity-content h3 {
-     margin-bottom: 10px;
-     color: #333;
- }
+.room-content h3,
+.amenity-content h3 {
+  margin-bottom: 10px;
+  color: #333;
+}
 
- .room-features {
-     list-style: none;
-     padding: 0;
-     margin: 15px 0;
- }
+.room-features {
+  list-style: none;
+  padding: 0;
+  margin: 15px 0;
+}
 
- .room-features li {
-     margin: 5px 0;
-     color: #666;
- }
+.room-features li {
+  margin: 5px 0;
+  color: #666;
+}
 
- .room-features i {
-     color: #8B4513;
-     margin-right: 10px;
- }
+.room-features i {
+  color: #8b4513;
+  margin-right: 10px;
+}
 
- .room-price {
-     font-size: 1.25rem;
-     color: #8B4513;
-     font-weight: bold;
-     margin: 15px 0;
- }
+.room-price {
+  font-size: 1.25rem;
+  color: #8b4513;
+  font-weight: bold;
+  margin: 15px 0;
+}
 
- .slider-controls {
-     display: flex;
-     justify-content: center;
-     margin-top: 30px;
-     gap: 20px;
- }
+.slider-controls {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  gap: 20px;
+}
 
- .swiper-button {
-     width: 50px;
-     height: 50px;
-     border-radius: 50%;
-     background: #fff;
-     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-     cursor: pointer;
-     display: flex;
-     align-items: center;
-     justify-content: center;
-     transition: all 0.3s ease;
- }
+.swiper-button {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
 
- .swiper-button:hover {
-     background: #8B4513;
-     color: #fff;
- }
+.swiper-button:hover {
+  background: #8b4513;
+  color: #fff;
+}
 
- .swiper-pagination {
-     position: relative;
-     margin-top: 30px;
- }
+.swiper-pagination {
+  position: relative;
+  margin-top: 30px;
+}
 
- .swiper-pagination-bullet {
-     width: 12px;
-     height: 12px;
-     background: #8B4513;
-     opacity: 0.5;
- }
+.swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background: #8b4513;
+  opacity: 0.5;
+}
 
- .swiper-pagination-bullet-active {
-     opacity: 1;
- }
- /* WhatsApp Floating Icon Styles */
+.swiper-pagination-bullet-active {
+  opacity: 1;
+}
+/* WhatsApp Floating Icon Styles */
 .whatsapp-float {
-    position: fixed;
-    bottom: 20px; /* Distance from the bottom */
-    right: 20px;  /* Distance from the right */
-    z-index: 1000; /* Ensures it stays above other elements */
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 60px;
-    height: 60px;
-    background-color: #25d366;
-    border-radius: 50%;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease;
+  position: fixed;
+  bottom: 20px; /* Distance from the bottom */
+  right: 20px; /* Distance from the right */
+  z-index: 1000; /* Ensures it stays above other elements */
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  background-color: #25d366;
+  border-radius: 50%;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
 }
 
 .whatsapp-float:hover {
-    transform: scale(1.1); /* Slight zoom effect on hover */
+  transform: scale(1.1); /* Slight zoom effect on hover */
 }
 
 .whatsapp-float img {
-    width: 35px; /* Adjust icon size */
-    height: 35px;
+  width: 35px; /* Adjust icon size */
+  height: 35px;
 }
