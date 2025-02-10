@@ -1,594 +1,492 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Explore our stunning photo gallery showcasing Sweet Pee Hotel's luxurious accommodations, facilities, and breathtaking views."
-    />
-    <title>Gallery - Sweet Pee Hotel</title>
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Explore our stunning photo gallery showcasing Sweet Pee Hotel's luxurious accommodations, Facilities, and breathtaking views." />
+  <title>Gallery - Sweet Pee Hotel</title>
 
-    <!-- Bootstrap CSS -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico" />
 
-    <!-- Font Awesome -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    />
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
 
-    <!-- Fancybox CSS -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"
-    />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="assets/css/style.css" />
+  <!-- Fancybox CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
 
-    <!-- AOS Animation Library -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="assets/css/style.css" />
 
-    <style>
-      .gallery-section {
-        padding: 80px 0;
-      }
+  <!-- AOS Animation Library -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
-      .gallery-filters {
-        margin-bottom: 30px;
-      }
+  <!-- Lightbox CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" rel="stylesheet" />
 
-      .filter-button {
-        margin: 5px;
-        padding: 8px 20px;
-        border: none;
-        background: transparent;
-        color: #333;
-        transition: all 0.3s ease;
-        border-radius: 25px;
-      }
+  <style>
+    .gallery-section {
+      padding: 80px 0;
+    }
 
-      .filter-button:hover,
-      .filter-button.active {
-        background: #007bff;
-        color: white;
-      }
+    .gallery-filters {
+      margin-bottom: 30px;
+    }
 
-      .gallery-grid {
-        margin: 0 -10px;
-      }
+    .filter-button {
+      margin: 5px;
+      padding: 8px 20px;
+      border: none;
+      background: transparent;
+      color: #333;
+      transition: all 0.3s ease;
+      border-radius: 25px;
+    }
 
+    .filter-button:hover,
+    .filter-button.active {
+      background: #007bff;
+      color: white;
+    }
+
+    .gallery-grid {
+      margin: 0 -10px;
+    }
+
+    .gallery-item {
+      width: calc(33.333% - 20px);
+      margin: 10px;
+      overflow: hidden;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+
+    .gallery-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: all 0.3s ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.05);
+    }
+
+    @media (max-width: 992px) {
       .gallery-item {
-        width: calc(33.333% - 20px);
-        margin: 10px;
-        overflow: hidden;
-        border-radius: 8px;
-        transition: all 0.3s ease;
+        width: calc(50% - 20px);
       }
+    }
 
-      .gallery-item:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    @media (max-width: 576px) {
+      .gallery-item {
+        width: calc(100% - 20px);
       }
+    }
 
-      .gallery-item img {
-        width: 100%;
-        height: auto;
-        display: block;
-        transition: all 0.3s ease;
-      }
+    /* Custom lightbox styling */
+    .fancybox__container {
+      --fancybox-bg: rgba(24, 24, 27, 0.95);
+    }
 
-      .gallery-item:hover img {
-        transform: scale(1.05);
-      }
+    .fancybox__caption {
+      font-family: "Arial", sans-serif;
+      font-size: 16px;
+      padding: 16px;
+      text-align: center;
+      background: rgba(0, 0, 0, 0.7);
+    }
 
-      @media (max-width: 992px) {
-        .gallery-item {
-          width: calc(50% - 20px);
-        }
-      }
+    .fancybox__toolbar {
+      --fancybox-color: #fff;
+      padding: 16px;
+    }
 
-      @media (max-width: 576px) {
-        .gallery-item {
-          width: calc(100% - 20px);
-        }
-      }
+    .fancybox__counter {
+      font-size: 14px;
+      opacity: 0.8;
+    }
 
-      /* Custom lightbox styling */
-      .fancybox__container {
-        --fancybox-bg: rgba(24, 24, 27, 0.95);
-      }
+    .carousel__button {
+      background-color: rgba(0, 0, 0, 0.5);
+      border-radius: 50%;
+      width: 48px;
+      height: 48px;
+      transition: all 0.3s ease;
+    }
 
-      .fancybox__caption {
-        font-family: "Arial", sans-serif;
-        font-size: 16px;
-        padding: 16px;
-        text-align: center;
-        background: rgba(0, 0, 0, 0.7);
-      }
+    .carousel__button:hover {
+      background-color: rgba(0, 0, 0, 0.8);
+      transform: scale(1.1);
+    }
+  </style>
+</head>
 
-      .fancybox__toolbar {
-        --fancybox-color: #fff;
-        padding: 16px;
-      }
-
-      .fancybox__counter {
-        font-size: 14px;
-        opacity: 0.8;
-      }
-
-      .carousel__button {
-        background-color: rgba(0, 0, 0, 0.5);
-        border-radius: 50%;
-        width: 48px;
-        height: 48px;
-        transition: all 0.3s ease;
-      }
-
-      .carousel__button:hover {
-        background-color: rgba(0, 0, 0, 0.8);
-        transform: scale(1.1);
-      }
-    </style>
-  </head>
-  <body>
-    <!-- Loading Spinner -->
-    <div id="loader" class="loader-container">
-      <div class="spinner"></div>
-    </div>
-    <!-- WhatsApp Floating Icon -->
-    <a href="https://wa.me/233234567" class="whatsapp-float" target="_blank">
-      <img
-        src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
-        alt="WhatsApp"
-      />
-    </a>
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+<body>
+  <!-- Loading Spinner -->
+  <div id="loader" class="loader-container">
+    <div class="spinner"></div>
+  </div>
+  <!-- WhatsApp Floating Icon -->
+  <a href="https://wa.me/233234567" class="whatsapp-float" target="_blank">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
+  </a>
+  <!-- Navigation -->
+  <div class="nav-section">
+    <nav class="navbar navbar-expand-lg top-nav">
       <div class="container">
-        <a class="navbar-brand" href="index.html">
-          <img
-            src="assets/images/logo.webp"
-            alt="Sweet Pee Hotel Logo"
-            height="50"
-          />
-        </a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-        >
+        <a class="logo" href="#"><img src="assets/images/logo.webp" height="50" alt="Sweet pee Logo" /></a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#combinedNavbar">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
+
+        <div class="collapse navbar-collapse" id="combinedNavbar">
+          <!-- Navigation Links -->
+          <ul class="navbar-nav me-auto">
             <li class="nav-item">
-              <a class="nav-link" href="index.html">Home</a>
+              <a class="nav-link active" href="index.html">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="rooms.html">Rooms & Suites</a>
+              <a class="nav-link" href="rooms.html">Rooms</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="facilities.html">Facilities</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="gallery.html">Gallery</a>
+              <a class="nav-link" href="facilities.html">Amenities</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="about.html">About</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="contact.html">Contact</a>
+              <a class="nav-link" href="gallery.html">Gallery</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link book-now-btn" href="booking.html">Book Now</a>
+              <a class="nav-link" href="contact.html">Contact Us</a>
+            </li>
+          </ul>
+
+          <!-- Reservation Button -->
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a href="booking.html"><button class="book-now-btn">Make A Reservation</button></a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
+  </div>
 
-    <!-- Page Header -->
-    <header class="page-header gallery-header">
+  <!-- Page Header -->
+
+  <header class="gallery-header">
+    <div class="container">
+      <h1 data-aos="fade-up">Book Your Stay</h1>
+      <p data-aos="fade-up" data-aos-delay="200">
+        Make your reservation in a few simple steps
+      </p>
+    </div>
+  </header>
+
+  <!-- Gallery Section -->
+  <section class="gallery-section">
+    <div class="container">
+      <!-- Gallery Filters -->
+      <div class="gallery-filters text-center" data-aos="fade-up">
+        <button class="filter-button active" data-filter="*">All</button>
+        <button class="filter-button" data-filter=".rooms">
+          Rooms & Suites
+        </button>
+        <button class="filter-button" data-filter=".dining">Dining</button>
+        <button class="filter-button" data-filter=".Facilities">
+          Facilities
+        </button>
+        <button class="filter-button" data-filter=".events">
+          Environment
+        </button>
+      </div>
+
+      <!-- Gallery Grid -->
+      <div class="gallery-grid" data-aos="fade-up">
+        <!-- Rooms -->
+        <div class="gallery-item rooms">
+          <a href="assets/images/Deluxe Room/0T9A9265.webp" data-fancybox="gallery" data-caption="Luxury Suite Bedroom">
+            <img src="assets/images/Deluxe Room/0T9A9265.webp" alt="Luxury Suite Bedroom" />
+          </a>
+        </div>
+        <div class="gallery-item rooms">
+          <a href="assets/images/Deluxe Room/0T9A9261.webp" data-fancybox="gallery" data-caption="Ocean View Room">
+            <img src="assets/images/Deluxe Room/0T9A9261.webp" alt="Ocean View Room" />
+          </a>
+        </div>
+        <div class="gallery-item rooms">
+          <a href="assets/images/Deluxe Room/0T9A9265.webp" data-fancybox="gallery" data-caption="Presidential Suite">
+            <img src="assets/images/Deluxe Room/0T9A9265.webp" alt="Presidential Suite" />
+          </a>
+        </div>
+        <div class="gallery-item rooms">
+          <a href="assets/images/Deluxe Room/0T9A9288.webp" data-fancybox="gallery" data-caption="Presidential Suite">
+            <img src="assets/images/Deluxe Room/0T9A9288.webp" alt="Presidential Suite" />
+          </a>
+        </div>
+
+        <!-- Dining -->
+        <div class="gallery-item dining">
+          <a href="assets/images/Restaraunt/0T9A9209.webp" data-fancybox="gallery" data-caption="The Grand Restaurant">
+            <img src="assets/images/Restaraunt/0T9A9209.webp" alt="The Grand Restaurant" />
+          </a>
+        </div>
+        <div class="gallery-item dining">
+          <a href="assets/images/Restaraunt/0T9A9246.webp" data-fancybox="gallery" data-caption="Sunset Lounge Bar">
+            <img src="assets/images/Restaraunt/0T9A9246.webp" alt="Sunset Lounge Bar" />
+          </a>
+        </div>
+        <div class="gallery-item dining">
+          <a href="assets/images/Restaraunt/0T9A9213.webp" data-fancybox="gallery" data-caption="Beach Café">
+            <img src="assets/images/Restaraunt/0T9A9213.webp" alt="Beach Café" />
+          </a>
+        </div>
+        <div class="gallery-item dining">
+          <a href="assets/images/Restaraunt/0T9A9240.webp" data-fancybox="gallery" data-caption="Beach Café">
+            <img src="assets/images/Restaraunt/0T9A9240.webp" alt="Beach Café" />
+          </a>
+        </div>
+
+        <!-- Facilities -->
+        <div class="gallery-item Facilities">
+          <a href="assets/images/Gym/0T9A9251.webp" data-fancybox="gallery" data-caption="Swimming Pool">
+            <img src="assets/images/Gym/0T9A9251.webp" alt="Swimming Pool" />
+          </a>
+        </div>
+        <div class="gallery-item Facilities">
+          <a href="assets/images/Gym/0T9A9252.webp" data-fancybox="gallery" data-caption="Spa Treatment Room">
+            <img src="assets/images/Gym/0T9A9252.webp" alt="Spa Treatment Room" />
+          </a>
+        </div>
+
+        <!-- Environment -->
+        <div class="gallery-item events">
+          <a href="assets/images/Environment/0T9A9191.webp" data-fancybox="gallery" data-caption="Wedding Reception">
+            <img src="assets/images/Environment/0T9A9191.webp" alt="Wedding Reception" />
+          </a>
+        </div>
+        <div class="gallery-item events">
+          <a href="assets/images/Environment/0T9A9375.webp" data-fancybox="gallery" data-caption="Conference Room">
+            <img src="assets/images/Environment/0T9A9375.webp" alt="Conference Room" />
+          </a>
+        </div>
+        <div class="gallery-item events">
+          <a href="assets/images/Environment/0T9A9389.webp" data-fancybox="gallery" data-caption="Beach Event">
+            <img src="assets/images/Environment/0T9A9389.webp" alt="Beach Event" />
+          </a>
+        </div>
+        <div class="gallery-item events">
+          <a href="assets/images/Environment/0T9A9418.webp" data-fancybox="gallery" data-caption="Beach Event">
+            <img src="assets/images/Environment/0T9A9418.webp" alt="Beach Event" />
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <h3>Sweet Pee Hotel</h3>
+          <p>Luxury and comfort in every detail</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="rooms.html">Rooms & Suites</a></li>
+            <li><a href="dining.html">Dining</a></li>
+            <li><a href="Facilities.html">Facilities</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <h3>Contact Info</h3>
+          <p>
+            <i class="fas fa-map-marker-alt"></i> Kentikrono, Kumasi-Ghana
+          </p>
+          <p><i class="fas fa-phone"></i> +1 234 567 890</p>
+          <p><i class="fas fa-envelope"></i> info@sweetpeehotel.com</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
       <div class="container">
-        <h1 data-aos="fade-up">Our Gallery</h1>
-        <p data-aos="fade-up" data-aos-delay="200">
-          Explore the beauty of Sweet Pee Hotel through our lens
-        </p>
+        <p>&copy; 2024 Sweet Pee Hotel. All rights reserved.</p>
       </div>
-    </header>
+    </div>
+  </footer>
 
-    <!-- Gallery Section -->
-    <section class="gallery-section">
-      <div class="container">
-        <!-- Gallery Filters -->
-        <div class="gallery-filters text-center" data-aos="fade-up">
-          <button class="filter-button active" data-filter="*">All</button>
-          <button class="filter-button" data-filter=".rooms">
-            Rooms & Suites
-          </button>
-          <button class="filter-button" data-filter=".dining">Dining</button>
-          <button class="filter-button" data-filter=".facilities">
-            Facilities
-          </button>
-          <button class="filter-button" data-filter=".events">
-            Environment
-          </button>
-        </div>
+  <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+  <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+  <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
-        <!-- Gallery Grid -->
-        <div class="gallery-grid" data-aos="fade-up">
-          <!-- Rooms -->
-          <div class="gallery-item rooms">
-            <a
-              href="assets/images/Deluxe Room/0T9A9265.webp"
-              data-fancybox="gallery"
-              data-caption="Luxury Suite Bedroom"
-            >
-              <img
-                src="assets/images/Deluxe Room/0T9A9265.webp"
-                alt="Luxury Suite Bedroom"
-              />
-            </a>
-          </div>
-          <div class="gallery-item rooms">
-            <a
-              href="assets/images/Deluxe Room/0T9A9261.webp"
-              data-fancybox="gallery"
-              data-caption="Ocean View Room"
-            >
-              <img
-                src="assets/images/Deluxe Room/0T9A9261.webp"
-                alt="Ocean View Room"
-              />
-            </a>
-          </div>
-          <div class="gallery-item rooms">
-            <a
-              href="assets/images/Deluxe Room/0T9A9265.webp"
-              data-fancybox="gallery"
-              data-caption="Presidential Suite"
-            >
-              <img
-                src="assets/images/Deluxe Room/0T9A9265.webp"
-                alt="Presidential Suite"
-              />
-            </a>
-          </div>
-          <div class="gallery-item rooms">
-            <a
-              href="assets/images/Deluxe Room/0T9A9288.webp"
-              data-fancybox="gallery"
-              data-caption="Presidential Suite"
-            >
-              <img
-                src="assets/images/Deluxe Room/0T9A9288.webp"
-                alt="Presidential Suite"
-              />
-            </a>
-          </div>
+  <!-- Lightbox JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
 
-          <!-- Dining -->
-          <div class="gallery-item dining">
-            <a
-              href="assets/images/Restaraunt/0T9A9209.webp"
-              data-fancybox="gallery"
-              data-caption="The Grand Restaurant"
-            >
-              <img
-                src="assets/images/Restaraunt/0T9A9209.webp"
-                alt="The Grand Restaurant"
-              />
-            </a>
-          </div>
-          <div class="gallery-item dining">
-            <a
-              href="assets/images/Restaraunt/0T9A9246.webp"
-              data-fancybox="gallery"
-              data-caption="Sunset Lounge Bar"
-            >
-              <img
-                src="assets/images/Restaraunt/0T9A9246.webp"
-                alt="Sunset Lounge Bar"
-              />
-            </a>
-          </div>
-          <div class="gallery-item dining">
-            <a
-              href="assets/images/Restaraunt/0T9A9213.webp"
-              data-fancybox="gallery"
-              data-caption="Beach Café"
-            >
-              <img
-                src="assets/images/Restaraunt/0T9A9213.webp"
-                alt="Beach Café"
-              />
-            </a>
-          </div>
-          <div class="gallery-item dining">
-            <a
-              href="assets/images/Restaraunt/0T9A9240.webp"
-              data-fancybox="gallery"
-              data-caption="Beach Café"
-            >
-              <img
-                src="assets/images/Restaraunt/0T9A9240.webp"
-                alt="Beach Café"
-              />
-            </a>
-          </div>
+  <script>
+    // Initialize AOS
+    AOS.init();
 
-          <!-- Facilities -->
-          <div class="gallery-item facilities">
-            <a
-              href="assets/images/Gym/0T9A9251.webp"
-              data-fancybox="gallery"
-              data-caption="Swimming Pool"
-            >
-              <img src="assets/images/Gym/0T9A9251.webp" alt="Swimming Pool" />
-            </a>
-          </div>
-          <div class="gallery-item facilities">
-            <a
-              href="assets/images/Gym/0T9A9252.webp"
-              data-fancybox="gallery"
-              data-caption="Spa Treatment Room"
-            >
-              <img
-                src="assets/images/Gym/0T9A9252.webp"
-                alt="Spa Treatment Room"
-              />
-            </a>
-          </div>
+    // Loading spinner
+    window.addEventListener("load", function () {
+      document.getElementById("loader").style.display = "none";
+    });
 
-          <!-- Environment -->
-          <div class="gallery-item events">
-            <a
-              href="assets/images/Environment/0T9A9191.webp"
-              data-fancybox="gallery"
-              data-caption="Wedding Reception"
-            >
-              <img
-                src="assets/images/Environment/0T9A9191.webp"
-                alt="Wedding Reception"
-              />
-            </a>
-          </div>
-          <div class="gallery-item events">
-            <a
-              href="assets/images/Environment/0T9A9375.webp"
-              data-fancybox="gallery"
-              data-caption="Conference Room"
-            >
-              <img
-                src="assets/images/Environment/0T9A9375.webp"
-                alt="Conference Room"
-              />
-            </a>
-          </div>
-          <div class="gallery-item events">
-            <a
-              href="assets/images/Environment/0T9A9389.webp"
-              data-fancybox="gallery"
-              data-caption="Beach Event"
-            >
-              <img
-                src="assets/images/Environment/0T9A9389.webp"
-                alt="Beach Event"
-              />
-            </a>
-          </div>
-          <div class="gallery-item events">
-            <a
-              href="assets/images/Environment/0T9A9418.webp"
-              data-fancybox="gallery"
-              data-caption="Beach Event"
-            >
-              <img
-                src="assets/images/Environment/0T9A9418.webp"
-                alt="Beach Event"
-              />
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Footer -->
-    <!-- Footer -->
-    <footer class="footer">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-4">
-            <h3>Sweet Pee Hotel</h3>
-            <p>Luxury and comfort in every detail</p>
-            <div class="social-links">
-              <a href="#"><i class="fab fa-facebook"></i></a>
-              <a href="#"><i class="fab fa-instagram"></i></a>
-              <a href="#"><i class="fab fa-twitter"></i></a>
-              <a href="#"><i class="fab fa-linkedin"></i></a>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <h3>Quick Links</h3>
-            <ul>
-              <li><a href="rooms.html">Rooms & Suites</a></li>
-              <li><a href="dining.html">Dining</a></li>
-              <li><a href="facilities.html">Facilities</a></li>
-              <li><a href="contact.html">Contact Us</a></li>
-            </ul>
-          </div>
-          <div class="col-md-4">
-            <h3>Contact Info</h3>
-            <p>
-              <i class="fas fa-map-marker-alt"></i> 123 Hotel Street, City,
-              Country
-            </p>
-            <p><i class="fas fa-phone"></i> +1 234 567 890</p>
-            <p><i class="fas fa-envelope"></i> info@sweetpeehotel.com</p>
-          </div>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <div class="container">
-          <p>&copy; 2024 Sweet Pee Hotel. All rights reserved.</p>
-        </div>
-      </div>
-    </footer>
-
-    <!-- Scripts -->
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
-    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
-    <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
-    <script>
-      // Initialize AOS
-      AOS.init();
-
-      // Loading spinner
-      window.addEventListener("load", function () {
-        document.getElementById("loader").style.display = "none";
-      });
-
-      // Wait for document ready
-      $(document).ready(function () {
-        // Initialize Isotope after images are loaded
-        var $grid = $(".gallery-grid").imagesLoaded(function () {
-          $grid.isotope({
-            itemSelector: ".gallery-item",
-            layoutMode: "masonry",
-            transitionDuration: "0.6s",
-            stagger: 30,
-            masonry: {
-              columnWidth: ".gallery-item",
-              gutter: 20,
-            },
-          });
-        });
-
-        // Filter items on button click
-        $(".gallery-filters").on("click", "button", function () {
-          var filterValue = $(this).attr("data-filter");
-          // Remove dot from class name for "all" filter
-          if (filterValue === "*") {
-            $grid.isotope({ filter: "*" });
-          } else {
-            // Add dot to class name for specific filters
-            $grid.isotope({ filter: filterValue });
-          }
-
-          // Update active state
-          $(".filter-button").removeClass("active");
-          $(this).addClass("active");
-        });
-
-        // Layout Isotope after each image loads
-        $grid.imagesLoaded().progress(function () {
-          $grid.isotope("layout");
+    // Wait for document ready
+    $(document).ready(function () {
+      // Initialize Isotope after images are loaded
+      var $grid = $(".gallery-grid").imagesLoaded(function () {
+        $grid.isotope({
+          itemSelector: ".gallery-item",
+          layoutMode: "masonry",
+          transitionDuration: "0.6s",
+          stagger: 30,
+          masonry: {
+            columnWidth: ".gallery-item",
+            gutter: 20,
+          },
         });
       });
 
-      // Initialize Fancybox with enhanced features
-      Fancybox.bind("[data-fancybox]", {
-        // Sliding transition effect
-        Image: {
-          zoom: true,
-          wheel: true,
-          click: true,
-          fit: "contain",
-        },
+      // Filter items on button click
+      $(".gallery-filters").on("click", "button", function () {
+        var filterValue = $(this).attr("data-filter");
+        // Remove dot from class name for "all" filter
+        if (filterValue === "*") {
+          $grid.isotope({ filter: "*" });
+        } else {
+          // Add dot to class name for specific filters
+          $grid.isotope({ filter: filterValue });
+        }
 
-        // Customize toolbar buttons
-        Toolbar: {
-          display: [
-            { id: "prev", position: "center" },
-            { id: "counter", position: "center" },
-            { id: "next", position: "center" },
-            "zoom",
-            "slideshow",
-            "fullscreen",
-            "download",
-            "close",
-          ],
-        },
+        // Update active state
+        $(".filter-button").removeClass("active");
+        $(this).addClass("active");
+      });
 
-        // Customize animations
+      // Layout Isotope after each image loads
+      $grid.imagesLoaded().progress(function () {
+        $grid.isotope("layout");
+      });
+    });
+
+    // Initialize Fancybox with enhanced features
+    Fancybox.bind("[data-fancybox]", {
+      // Sliding transition effect
+      Image: {
+        zoom: true,
+        wheel: true,
+        click: true,
+        fit: "contain",
+      },
+
+      // Customize toolbar buttons
+      Toolbar: {
+        display: [
+          { id: "prev", position: "center" },
+          { id: "counter", position: "center" },
+          { id: "next", position: "center" },
+          "zoom",
+          "slideshow",
+          "fullscreen",
+          "download",
+          "close",
+        ],
+      },
+
+      // Customize animations
+      animated: true,
+      showClass: "fancybox-zoomIn",
+      hideClass: "fancybox-zoomOut",
+
+      // Slideshow settings
+      Slideshow: {
+        autoStart: false,
+        playSpeed: 3000,
+      },
+
+      // Caption settings
+      Caption: {
+        position: "bottom",
         animated: true,
-        showClass: "fancybox-zoomIn",
-        hideClass: "fancybox-zoomOut",
+      },
 
-        // Slideshow settings
-        Slideshow: {
-          autoStart: false,
-          playSpeed: 3000,
-        },
+      // Thumbnails
+      Thumbs: {
+        autoStart: true,
+        type: "classic",
+      },
 
-        // Caption settings
-        Caption: {
-          position: "bottom",
-          animated: true,
-        },
+      // Keyboard navigation
+      keyboard: {
+        Escape: "close",
+        Delete: "close",
+        Backspace: "close",
+        PageUp: "next",
+        PageDown: "prev",
+        ArrowUp: "prev",
+        ArrowDown: "next",
+        ArrowRight: "next",
+        ArrowLeft: "prev",
+      },
 
-        // Thumbnails
-        Thumbs: {
-          autoStart: true,
-          type: "classic",
-        },
+      // Mobile settings
+      Mobile: {
+        clickContent: "close",
+        clickSlide: "close",
+        dblclickContent: "zoom",
+        touch: true,
+      },
 
-        // Keyboard navigation
-        keyboard: {
-          Escape: "close",
-          Delete: "close",
-          Backspace: "close",
-          PageUp: "next",
-          PageDown: "prev",
-          ArrowUp: "prev",
-          ArrowDown: "next",
-          ArrowRight: "next",
-          ArrowLeft: "prev",
+      // Custom click actions
+      on: {
+        init: (fancybox) => {
+          // Add custom initialization logic
         },
+        "Carousel.ready": (fancybox, carousel) => {
+          // Carousel is ready to use
+        },
+        load: (fancybox, slide) => {
+          // Slide is loaded
+        },
+      },
+    });
 
-        // Mobile settings
-        Mobile: {
-          clickContent: "close",
-          clickSlide: "close",
-          dblclickContent: "zoom",
-          touch: true,
-        },
-
-        // Custom click actions
-        on: {
-          init: (fancybox) => {
-            // Add custom initialization logic
-          },
-          "Carousel.ready": (fancybox, carousel) => {
-            // Carousel is ready to use
-          },
-          load: (fancybox, slide) => {
-            // Slide is loaded
-          },
-        },
+    // Preload images for smoother experience
+    document.addEventListener("DOMContentLoaded", function () {
+      const images = document.querySelectorAll(".gallery-item img");
+      images.forEach((img) => {
+        const highRes = img.parentElement.href;
+        new Image().src = highRes;
       });
+    });
+  </script>
+</body>
 
-      // Preload images for smoother experience
-      document.addEventListener("DOMContentLoaded", function () {
-        const images = document.querySelectorAll(".gallery-item img");
-        images.forEach((img) => {
-          const highRes = img.parentElement.href;
-          new Image().src = highRes;
-        });
-      });
-    </script>
-  </body>
 </html>
