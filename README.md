@@ -59,10 +59,12 @@ sweetpee-hotel/
 - Safari (latest)
 - Edge (latest)
 
-## Notes
+## Latest updates
 
-- Replace placeholder images with actual hotel images
-- Update meta descriptions for SEO
-- Add Google Analytics tracking
-- Configure contact form endpoint
-- Add actual hotel information and content
+- SEO Optimasation for all pages
+- Sitemap added
+- Added Google Analytics tracking
+
+## To-Do
+- Configure booking form endpoint to communicate with Hotelipad account
+
