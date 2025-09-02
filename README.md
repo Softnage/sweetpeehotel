@@ -18,7 +18,7 @@ sweetpee-hotel/
 │       └── ...
 ├── index.html
 ├── rooms.html
-├── facilities.html
+├── Facilities.html
 ├── dining.html
 ├── about.html
 ├── contact.html
