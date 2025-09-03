@@ -64,7 +64,7 @@ sweetpee-hotel/
 - SEO Optimasation for all pages
 - Sitemap added
 - Added Google Analytics tracking
+- Configured booking form endpoint to communicate with Hotelipad account
 
-## To-Do
-- Configure booking form endpoint to communicate with Hotelipad account
+
 
